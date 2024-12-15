@@ -62,7 +62,11 @@ const Team = () => {
   return (
     <Box m="20px">
       <Header title="Team" subtitle="팀원 관리" />
-      <Box>
+      <Box
+        m="40px 0 0 0 "
+        height="75vh"
+        sx={{ "& .MuiDataGrid-root": { border: "none" } }}
+      >
         <DataGrid rows={mockDataTeam} columns={columns} />
       </Box>
     </Box>
