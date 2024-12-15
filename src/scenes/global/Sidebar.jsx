@@ -23,12 +23,15 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   return (
     <MenuItem
       active={selected === title}
-      style={{
-        color: colors.grey[100],
-      }}
       onClick={() => setSelected(title)}
       icon={icon}
+
+      //  2024.12.15 빡침기록.
+      // component={Link}
+      //  to={to}
+      // 이런식으로 적으면 link 이동 안됨.
     >
+      <Link to={to} />
       <Typography>{title}</Typography>
     </MenuItem>
   );
@@ -134,21 +137,21 @@ const Sidebar = () => {
               Data
             </Typography>
             <Item
-              title="Manage Team"
+              title="Team"
               to="/team"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Contacts Information"
+              title="거래처 연락 정보"
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
+              title="송장 잔액 현황"
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
@@ -163,14 +166,14 @@ const Sidebar = () => {
               Pages
             </Typography>
             <Item
-              title="Profile Form"
+              title="프로필 양식"
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Calendar"
+              title="일정 관리"
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
