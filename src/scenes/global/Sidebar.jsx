@@ -144,7 +144,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="거래처 연락 정보"
+              title="수주 계약 리스트"
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
