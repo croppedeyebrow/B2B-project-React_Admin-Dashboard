@@ -144,14 +144,14 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="수주 계약 리스트"
+              title="Contact List"
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="송장 잔액 현황"
+              title="Invoice Balance"
               to="/invoices"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
