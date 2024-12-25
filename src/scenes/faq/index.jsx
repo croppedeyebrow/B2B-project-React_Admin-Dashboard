@@ -14,10 +14,65 @@ const FAQ = () => {
     <Box m="20px">
       <Header title="FAQ" subtitle="자주 묻는 질문" />
 
-      <Accordion>
+      <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
             중요한 질문
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>질문 요약</Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion defaultExpanded>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography color={colors.greenAccent[500]} variant="h5">
+            중요한 질문 2
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>질문 요약</Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion defaultExpanded>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography color={colors.greenAccent[500]} variant="h5">
+            가장 많이한 질문들
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>질문 요약</Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion defaultExpanded>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography color={colors.greenAccent[500]} variant="h5">
+            예상 질문들
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>질문 요약</Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion defaultExpanded>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography color={colors.greenAccent[500]} variant="h5">
+            중요한 질문3
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>질문 요약</Typography>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion defaultExpanded>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography color={colors.greenAccent[500]} variant="h5">
+            중요한 질문 4
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
