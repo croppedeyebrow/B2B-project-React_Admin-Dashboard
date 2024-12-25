@@ -166,7 +166,7 @@ const Sidebar = () => {
               Pages
             </Typography>
             <Item
-              title="프로필 양식"
+              title="거래처 프로필 등록"
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
