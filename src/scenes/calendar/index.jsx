@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import { formatDate } from "@fullcalendar/core";
-import dayGridplugin from "@fullcalendar/daygrid";
+import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
@@ -36,12 +36,16 @@ const Calendar = () => {
       calendarApi.addEvent({
         id: `${selected.dateStr}-${title}`,
         title,
-        start: selected.startsStr,
+        start: selected.startStr,
         end: selected.endStr,
         allDay: selected.allDay,
       });
     }
   };
+
+  //   2024.12.25수정사항:
+  // selected.startsStr를 selected.startStr로 수정했습니다
+  // FullCalendar API에서는 startStr이 올바른 속성 이름입니다
 
   const handleEventClick = (selected) => {
     if (
@@ -96,15 +100,15 @@ const Calendar = () => {
           <FullCalendar
             height="76vh"
             plugins={[
-              dayGridplugin,
+              dayGridPlugin,
               timeGridPlugin,
               interactionPlugin,
               listPlugin,
             ]}
             headerToolbar={{
-              left: "prev, next today",
+              left: "prev,next today",
               center: "title",
-              right: "dayGridMonth, timeGridWeek, timeGridDay, listMonth",
+              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
             }}
             initialView="dayGridMonth"
             editable={true}
