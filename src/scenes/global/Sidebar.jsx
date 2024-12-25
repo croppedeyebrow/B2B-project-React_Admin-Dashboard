@@ -166,14 +166,14 @@ const Sidebar = () => {
               Pages
             </Typography>
             <Item
-              title="거래처 프로필 등록"
+              title="Customer profile form"
               to="/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="일정 관리"
+              title="Schedule"
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
