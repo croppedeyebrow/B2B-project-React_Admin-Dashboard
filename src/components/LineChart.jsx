@@ -69,7 +69,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
       axisLeft={{
         orient: "left",
         tickValues: 5, // added
-        tickSize: 3,
+        tickSize: 4,
         tickPadding: 5,
         tickRotation: 0,
         legend: isDashboard ? undefined : "count", // added
