@@ -1,11 +1,13 @@
 import { ResponsivePie } from "@nivo/pie";
 import { tokens } from "../theme";
 import { useTheme } from "@mui/material";
-import { mockPieData as data } from "../data/mockData";
+import { mockPieData as data, mockPieData } from "../data/mockData";
 
 const PieChart = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  // 전체 value의 합 계산
+  const totalValue = mockPieData.reduce((sum, item) => sum + item.value, 0);
   return (
     <ResponsivePie
       data={data}
@@ -45,6 +47,27 @@ const PieChart = () => {
       borderColor={{
         from: "color",
         modifiers: [["darker", 0.2]],
+      }}
+      tooltip={({ datum }) => {
+        // 비율계산
+        const percentage = ((datum.value / totalValue) * 100).toFixed(1);
+        return (
+          <div
+            style={{
+              padding: 12,
+              background: colors.grey[100],
+              color: colors.grey[900],
+              border: "1px solid #ccc",
+              borderRadius: 4,
+            }}
+          >
+            <strong>{datum.id}</strong>
+            <br />
+            매출액: {datum.value}1M$
+            <br />
+            비율: {percentage}%
+          </div>
+        );
       }}
       arcLinkLabelsSkipAngle={10}
       arcLinkLabelsTextColor={colors.grey[100]}

@@ -39,10 +39,26 @@ const BarChart = ({ isDashboard = false }) => {
           },
         },
       }}
-      keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
+      keys={["Python", "C", "JavaScript", "React", "Rust", "Java"]}
       indexBy="country"
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
       padding={0.3}
+      tooltip={({ id, value, color, indexValue }) => (
+        <div
+          style={{
+            padding: 12,
+            background: colors.grey[100],
+            color: colors.grey[900],
+            borderRadius: 4,
+          }}
+        >
+          <strong>
+            {indexValue} ({id})
+          </strong>
+          <br />
+          <span style={{ color: color }}>수량: {value}</span>
+        </div>
+      )}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
       colors={{ scheme: "nivo" }}
