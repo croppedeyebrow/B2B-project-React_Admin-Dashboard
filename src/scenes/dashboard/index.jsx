@@ -149,7 +149,7 @@ const Dashboard = () => {
               </Typography>
               <Typography
                 variant="h3"
-                fontWeight="500"
+                fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
                 $59,342,32
@@ -164,8 +164,119 @@ const Dashboard = () => {
               </IconButton>
             </Box>
           </Box>
-          <Box height="250px" ml="-20px">
+
+          <Box height="250px" mt="-20px">
             <LineChart isDashboard={true} />
+          </Box>
+        </Box>
+        {/* Transaction */}
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          overflow="auto"
+        >
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            borderBottom={`4px solid ${colors.primary[500]}`}
+            colors={colors.grey[200]}
+            p="16px"
+          >
+            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+              최근 수익 변동 현황
+            </Typography>
+          </Box>
+          {mockTransactions.map((transaction, i) => (
+            <Box
+              key={`${transaction.txId}-${i}`}
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              borderBottom={`4px solid ${colors.primary[500]}`}
+              p="16px"
+            >
+              <Box>
+                <Typography
+                  color={colors.greenAccent[500]}
+                  variant="h5"
+                  fontWeight="600"
+                >
+                  계약 넘버 : {transaction.txId}
+                </Typography>
+                <Typography color={colors.grey[100]}>
+                  계약 사원 : {transaction.user}
+                </Typography>
+              </Box>
+              <Box color={colors.grey[100]}>{transaction.date}</Box>
+              <Box
+                backgroundColor={colors.greenAccent[500]}
+                p="6px 12px"
+                borderRadius="4px"
+              >
+                ${transaction.cost}
+              </Box>
+            </Box>
+          ))}
+        </Box>
+
+        {/* ROW 3 */}
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          p="30px"
+        >
+          <Typography variant="h5" fontWeight="600">
+            총 매출 현황
+          </Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mt="25px"
+          >
+            <ProgressCircle size="125" />
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+              sx={{ mt: "15px" }}
+            >
+              총 매출 : $48,352
+            </Typography>
+            <Typography>비용 및 지출 포함(순수익아님)</Typography>
+          </Box>
+        </Box>
+
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+        >
+          <Typography
+            variant="h5"
+            fontWeight="600"
+            sx={{ p: "30px 30px 0 30px" }}
+          >
+            영업 관련 언어 구성표
+          </Typography>
+          <Box height="250px" mt="-20px">
+            <BarChart isDashboard={true} />
+          </Box>
+        </Box>
+
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          p="32px"
+        >
+          <Typography variant="h5" fontWeight="600" sx={{ mb: "16px" }}>
+            지역별 사업 내역
+          </Typography>
+          <Box height="210px">
+            <GeographyChart isDashboard={true} />
           </Box>
         </Box>
       </Box>
